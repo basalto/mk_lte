@@ -1,0 +1,10 @@
+sm1 <- ggplot(ftp_ul_4g_filter, aes(x=RSRP, y=Throughput.UL.MAC, colour="red")) + geom_jitter(size=1.5, na.rm = TRUE) + guides(colour=FALSE)
+sm2 <- ggplot(ftp_dl_4g_filter, aes(x=SNR, y=Throughput.DL.MAC, colour="red")) + geom_jitter(size=1.5, na.rm = TRUE) + guides(colour=FALSE) + scale_y_continuous(limits=c(0, 200000))
+sm2 <- ggplot(ftp_dl_4g_filter, aes(x=RSRP, y=Throughput.DL.MAC, colour="red")) + geom_jitter(size=1.5, na.rm = TRUE) + guides(colour=FALSE)
+m1 <- multiplot(sm1, sm2, cols=2)
+
+#savePlot("/home/rjdinis/development/R/Throughput_4G/Charts/Throughput_4G.png")
+#dev.copy("/home/rjdinis/development/R/Throughput_4G/Charts/Throughput_4G.png")
+#png("/home/rjdinis/development/R/Throughput_4G/Charts/Throughput_4G_DL_UL.png")
+#dev.off()
+#m1 <- multiplot(sm1, sm2, cols=2)
